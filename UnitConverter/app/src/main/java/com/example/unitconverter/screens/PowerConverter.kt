@@ -24,7 +24,7 @@ import com.example.unitconverter.viewmodels.PowerViewModel
 fun PowerConverter() {
     val viewModel: PowerViewModel = viewModel()
     val strWatt = stringResource(id = R.string.watt)
-    val strPS = stringResource(id = R.string.horse_power)
+    val strHP = stringResource(id = R.string.horse_power)
     val currentValue = viewModel.power.observeAsState(viewModel.power.value ?: "")
     val ePower = viewModel.ePower.observeAsState(viewModel.ePower.value ?: R.string.watt)
     var result by rememberSaveable { mutableStateOf("") }
@@ -35,7 +35,7 @@ fun PowerConverter() {
         else
             "$temp${
                 if (ePower.value == R.string.watt)
-                    strPS
+                    strHP
                 else strWatt
             }"
     }
